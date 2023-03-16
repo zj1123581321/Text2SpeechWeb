@@ -97,23 +97,28 @@ function getNowTime() {
 
 async function GoogleTranslate(chineseText, targetLanguageCode) {
   const encodedText = encodeURIComponent(chineseText);
-	const url = `https://translate.googleapis.com/translate_a/single?dt=t&dt=bd&dt=qc&dt=rm&client=gtx&sl=auto&tl=${targetLanguageCode}zh-CN&hl=en-US&dj=1&q=${encodedText}&tk=574558.574558`;
+	const url = `https://translate.googleapis.com/translate_a/single?dt=t&dt=bd&dt=qc&dt=rm&client=gtx&sl=auto&tl=${targetLanguageCode}&hl=en-US&dj=1&q=${encodedText}&tk=574558.574558`;
 
   try {
     const response = await fetch(url);
     const data = await response.json();
-    const englishText = data.sentences.map(sentence => sentence.trans).join('');
-    return englishText;
+    const targetText = data.sentences.map(sentence => sentence.trans).join('');
+    console.log("翻译结果: " + targetText);
+    return targetText;
   } catch (error) {
     alert(`翻译失败: ${error}`);
   }
 }
 
 async function text2speech(englishText, targetLanguage, apiKey) {
+  // 调用 Google translate 将 EnglishtText 翻译成目标语言
   const targetLanguageConfig = languageConfig[targetLanguage];
-// 调用 Google translate 将 EnglishtText 翻译成目标语言
+  console.log(targetLanguageConfig);
   const TargetLanguageCode = targetLanguageConfig.languageCode;
+  console.log(TargetLanguageCode);
 	const TargetLanguageText = await GoogleTranslate(englishText, TargetLanguageCode);
+  console.log(TargetLanguageText);
+  // 调用 text2speech API 将目标语言文本转换为音频
 	const request = {
 			"input": {"text": TargetLanguageText},
 			"voice": targetLanguageConfig,
