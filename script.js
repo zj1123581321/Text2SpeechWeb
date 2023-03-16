@@ -134,6 +134,11 @@ async function text2speech(englishText, targetLanguage, apiKey) {
       },
       body: JSON.stringify(request),
     });
+    // 根据 response 判断请求是否成功
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error.message);
+    }
     const data = await response.json();
     const audioContent = data.audioContent;
     const audioBlob = base64toBlob(audioContent, "audio/mp3");
