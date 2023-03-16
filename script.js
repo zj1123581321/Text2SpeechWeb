@@ -20,6 +20,18 @@ if (apiKey) {
   apiKeyInput.value = apiKey;
 }
 
+// 如果 targetLanguageSelect 选中，自动保存到 local storage
+targetLanguageSelect.addEventListener("change", () => {
+  const targetLanguage = targetLanguageSelect.value;
+  localStorage.setItem("targetLanguage", targetLanguage);
+});
+
+// 如果 local storage 中有 targetLanguage，自动选中
+const targetLanguage = localStorage.getItem("targetLanguage");
+if (targetLanguage) {
+  targetLanguageSelect.value = targetLanguage;
+}
+
 saveApiKeyButton.addEventListener("click", saveApiKey);
 
 translateToEnglishButton.addEventListener("click", translateToEnglish);
@@ -62,11 +74,25 @@ async function transcribeAudio() {
   audio.play();
 	// 保存音频文件
 	const chineseText = chineseInput.value;
-	const fileName = `${new Date().toISOString().slice(0, 19).replace(/[-:]/g, "")}-${chineseText}.mp3`;
+  const fileName =  `${getNowTime()}-${chineseText}.mp3`;
+	// const fileName = `${new Date().toISOString().slice(0, 19).replace(/[-:]/g, "")}-${chineseText}.mp3`;
 	const downloadLink  = document.createElement("a");
   downloadLink.href = audioUrl;
   downloadLink.download = fileName;
   downloadLink.click();
+}
+
+//获取当前时间，返回 yymmdd-hhmmss 格式,格式对齐
+function getNowTime() {
+  const now = new Date();
+  const year = now.getFullYear().toString().slice(2);
+  const month = (now.getMonth() + 1).toString().padStart(2, "0");
+  const day = now.getDate().toString().padStart(2, "0");
+  const hour = now.getHours().toString().padStart(2, "0");
+  const minute = now.getMinutes().toString().padStart(2, "0");
+  const second = now.getSeconds().toString().padStart(2, "0");
+  const time = `${year}${month}${day}-${hour}${minute}${second}`;
+  return time;
 }
 
 async function GoogleTranslate(chineseText, targetLanguageCode) {

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Translation and Text-to-Speech Webpage</title>
+    <title>文本翻译，生成音频</title>
+    <meta name="description" content="输入的中文会翻译成英文，英文会自动翻译成阿语并下载对应的 Mp3 文件">
+    <!-- <link rel="icon" type="image/x-icon" href="favico.png"> -->
+    <meta property="og:title" content="文本翻译，生成音频">
+    <meta property="og:description" content="输入的中文会翻译成英文，英文会自动翻译成阿语并下载对应的 Mp3 文件">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Translation and Text-to-Speech Webpage</h1>
+      <h1>文本翻译，生成音频</h1>
       <div class="input-container">
         <label for="api-key">Google Text2Speech API Key:</label>
         <input type="password" id="api-key" />
@@ -34,6 +38,30 @@
             <option value="美国英语-WaveNet-女K">美国英语-WaveNet-女K</option>
         </select>
       </div>
+
+      <div class="instructions-container">
+        <h2>使用说明</h2>
+        <div class="instruction">
+          <h3>获取 Google Text 2 Speech API Key</h3>
+          <p>如果你是 Fd 的朋友，请点击<a href="https://wiki.duolainc.com/pages/viewpage.action?pageId=43462257">文章</a>获取 API key。该 API key <strong>仅在 Fd 内网条件</strong>下可以使用，在家使用请挂 VPN。</p>
+          <p>如果你想自己申请 API key，请参考<a href="https://zhanglixing.feishu.cn/docs/doccnvP6BLCiBwjHZrtGEPI97cA#Ldp3p2">文章</a>并遵照操作。</p>
+          <p>输入申请的 API key ，点击『Save』即可。</p>
+        </div>
+        <div class="instruction">
+          <h3>翻译文本</h3>
+          <p>1. 在中文内容的文本框中输入需要翻译的中文内容。</p>
+          <p>2. 点击『翻译成英文』按钮进行翻译。</p>
+          <p>3. 翻译后的英文内容将会自动填充在英文内容的文本框中。</p>
+        </div>
+        <div class="instruction">
+          <h3>转写音频</h3>
+          <p>1. 在英文内容的文本框中校正需要转写的英文内容。</p>
+          <p>2. 从目标转写语言下拉框中选择需要转写的目标语言。</p>
+          <p>3. 点击『转写音频』按钮进行转写。</p>
+          <p>4. 转写完成后，对应的 Mp3 文件会自动下载到本地。</p>
+        </div>
+      </div>
+      
     </div>
     <script src="script.js"></script>
   </body>
