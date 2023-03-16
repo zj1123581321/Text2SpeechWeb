@@ -11,7 +11,29 @@ const languageConfig = {
     "阿拉伯语-WaveNet-男B": {"languageCode":"ar-XA","name":"ar-XA-Wavenet-B","ssmlGender":"MALE"},
     "阿拉伯语-WaveNet-男C": {"languageCode":"ar-XA","name":"ar-XA-Wavenet-C","ssmlGender":"MALE"},
     "阿拉伯语-WaveNet-女D": {"languageCode":"ar-XA","name":"ar-XA-Wavenet-D","ssmlGender":"FEMALE"},
-    "美国英语-WaveNet-女K": {"languageCode":"en-US","name":"en-US-News-K","ssmlGender":"FEMALE"}
+    "美国英语-WaveNet-女K": {"languageCode":"en-US","name":"en-US-News-K","ssmlGender":"FEMALE"},
+    "德语-WaveNet-男C": {"languageCode":"de-DE","name":"de-DE-Wavenet-C","ssmlGender":"MALE"},
+    "德语-WaveNet-女B": {"languageCode":"de-DE","name":"de-DE-Wavenet-B","ssmlGender":"FEMALE"},
+    "德语-WaveNet-女C": {"languageCode":"de-DE","name":"de-DE-Wavenet-C","ssmlGender":"FEMALE"},
+    "德语-WaveNet-男D": {"languageCode":"de-DE","name":"de-DE-Wavenet-D","ssmlGender":"MALE"},
+    "英语-US-WaveNet-女A": {"languageCode":"en-US","name":"en-US-Wavenet-A","ssmlGender":"FEMALE"},
+    "英语-US-WaveNet-男B": {"languageCode":"en-US","name":"en-US-Wavenet-B","ssmlGender":"MALE"},
+    "英语-US-WaveNet-男C": {"languageCode":"en-US","name":"en-US-Wavenet-C","ssmlGender":"MALE"},
+    "英语-US-WaveNet-女D": {"languageCode":"en-US","name":"en-US-Wavenet-D","ssmlGender":"FEMALE"},
+    "西班牙语-WaveNet-女A": {"languageCode":"es-ES","name":"es-ES-Wavenet-A","ssmlGender":"FEMALE"},
+    "西班牙语-WaveNet-男B": {"languageCode":"es-ES","name":"es-ES-Wavenet-B","ssmlGender":"MALE"},
+    "西班牙语-WaveNet-男C": {"languageCode":"es-ES","name":"es-ES-Wavenet-C","ssmlGender":"MALE"},
+    "西班牙语-WaveNet-女D": {"languageCode":"es-ES","name":"es-ES-Wavenet-D","ssmlGender":"FEMALE"},
+    "法语-WaveNet-女A": {"languageCode":"fr-FR","name":"fr-FR-Wavenet-A","ssmlGender":"FEMALE"},
+    "法语-WaveNet-男B": {"languageCode":"fr-FR","name":"fr-FR-Wavenet-B","ssmlGender":"MALE"},
+    "法语-WaveNet-男C": {"languageCode":"fr-FR","name":"fr-FR-Wavenet-C","ssmlGender":"MALE"},
+    "法语-WaveNet-女D": {"languageCode":"fr-FR","name":"fr-FR-Wavenet-D","ssmlGender":"FEMALE"},
+    "意大利语-WaveNet-女A": {"languageCode":"it-IT","name":"it-IT-Wavenet-A","ssmlGender":"FEMALE"},
+    "日语-WaveNet-女A": {"languageCode":"ja-JP","name":"ja-JP-Wavenet-A","ssmlGender":"FEMALE"},
+    "韩语-WaveNet-女A": {"languageCode":"ko-KR","name":"ko-KR-Wavenet-A","ssmlGender":"FEMALE"},
+    "荷兰语-WaveNet-女A": {"languageCode":"nl-NL","name":"nl-NL-Wavenet-A","ssmlGender":"FEMALE"},
+    "俄语-WaveNet-女A": {"languageCode":"ru-RU","name":"ru-RU-Wavenet-A","ssmlGender":"FEMALE"},
+    "土耳其语-WaveNet-女A": {"languageCode":"tr-TR","name":"tr-TR-Wavenet-A","ssmlGender":"FEMALE"}
   };
 
 	// 尝试从 local storage 中加载 API key
